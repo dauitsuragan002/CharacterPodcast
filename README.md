@@ -43,7 +43,7 @@ This project is a Streamlit web application for automatically creating a podcast
 To launch the web application:
 
 ```sh
-streamlit run tulga_podcast_updated.py
+streamlit run podcast_web.py
 ```
 
 ## Features
@@ -56,7 +56,7 @@ streamlit run tulga_podcast_updated.py
 ## Folders and Files
 
 - `app.py` — logic for generating podcast dialogues
-- `tulga_podcast_updated.py`, `podcast_web.py` — Streamlit web interfaces
+- `podcast_web.py` — Streamlit web interfaces
 - `modules/func.py` — TTS and audio playback functions
 - `config.py` — configuration and character list
 - `audio/` — generated audio files
