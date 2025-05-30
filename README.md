@@ -1,6 +1,6 @@
 # Tulga Podcast
 
-This project is a Streamlit web application for automatically creating a podcast between two characters. The project generates character dialogues using the [PyCharacterAI](https://github.com/GRVYDEV/PyCharacterAI) library and converts text to speech using [TulgaTTS](https://github.com/dauitsuragan002/tulga-tts).
+This project is a Streamlit web application for automatically creating a podcast between two characters. The project generates character dialogues using the [PyCharacterAI](https://github.com/GRVYDEV/PyCharacterAI) library and converts text to speech using [TulgaTTS](https://github.com/dauitsuragan002/tulgatts).
 
 ## Technologies Used
 
@@ -65,4 +65,4 @@ streamlit run podcast_web.py
 ## Authors
 
 - [PyCharacterAI](https://github.com/GRVYDEV/PyCharacterAI)
-- [TulgaTTS](https://github.com/dauitsuragan002/tulga-tts)
+- [TulgaTTS](https://github.com/dauitsuragan002/tulgatts)
