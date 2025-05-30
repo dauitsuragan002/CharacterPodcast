@@ -1,7 +1,7 @@
 import datetime
 import logging
 
-from config import CHAR_ID, char_token, client
+from config import CHAR_ID, char_token, client, get_message
 
 logging.basicConfig(
     level=logging.INFO,
@@ -12,7 +12,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("podcast")
 
-async def create_podcast(char1_name, char2_name, initial_topic, num_exchanges=5):
+async def create_podcast(char1_name, char2_name, initial_topic, num_exchanges=5, lang="en"):
     """
     Create a podcast-like conversation between two characters.
     
@@ -21,18 +21,19 @@ async def create_podcast(char1_name, char2_name, initial_topic, num_exchanges=5)
         char2_name: Name of the second character from CHAR_ID
         initial_topic: The initial topic or question to start the conversation
         num_exchanges: Number of back-and-forth exchanges between characters
+        lang: Language code for localization
     
     Returns:
         A list of dictionaries with the conversation history
     """
     session_id = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     
-    logger.info(f"Starting podcast between {char1_name} and {char2_name}")
+    logger.info(get_message("podcast_start", lang, char1_name, char2_name) if "podcast_start" in globals().get("MESSAGES", {}) else f"Starting podcast between {char1_name} and {char2_name}")
     
     await client.authenticate(char_token)
     
     if char1_name not in CHAR_ID or char2_name not in CHAR_ID:
-        error_msg = f"One or both characters not found in CHAR_ID dictionary"
+        error_msg = get_message("char_not_found", lang) if "char_not_found" in globals().get("MESSAGES", {}) else "One or both characters not found in CHAR_ID dictionary"
         logger.error(error_msg)
         raise ValueError(error_msg)
     
@@ -72,6 +73,6 @@ async def create_podcast(char1_name, char2_name, initial_topic, num_exchanges=5)
         
         current_message = char1_response
     
-    logger.info(f"Podcast completed with {len(conversation)} messages")
+    logger.info(get_message("podcast_completed", lang, len(conversation)) if "podcast_completed" in globals().get("MESSAGES", {}) else f"Podcast completed with {len(conversation)} messages")
     
     return conversation, session_id
