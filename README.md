@@ -22,8 +22,7 @@ This project is a Streamlit web application for automatically creating a podcast
     ```
 
 3. Add your TulgaTTS API token to the `.env` file:
-    ```
-    1.  **Obtain your token:**
+   1.  **Obtain your token:**
     *   ⚠️ **DO NOT SHARE YOUR TOKEN!** It is required to send requests from your account.
     *   Open link https://character.ai/chat/2WPyJRflV_4nTx6_-tuNrhkiiqhDyOsn9O25BR1sDO8
     *   Open **Developer Tools** in your browser (usually F12).
@@ -38,8 +37,6 @@ This project is a Streamlit web application for automatically creating a podcast
         ```
     *   Copy only the token part (after `Token `).
     *   Set the `CHARACTER_AI_TOKEN` environment variable or create a `.env` file in the project root and add `CHAR_TOKEN=CHARACTER_AI_TOKEN`.
-    
-    ```
 
 ## Usage
 
