@@ -38,6 +38,20 @@ This project is a Streamlit web application for automatically creating a podcast
     *   Copy only the token part (after `Token `).
     *   Set the `CHARACTER_AI_TOKEN` environment variable or create a `.env` file in the project root and add `CHAR_TOKEN=CHARACTER_AI_TOKEN`.
 
+   4. **Authorization easy (use for mobile) script**  
+   If you want to easily obtain your CharacterAI token using your email, you can use the provided `modules/auth.py` script:
+
+   ```sh
+   pip install characterai
+   python modules/auth.py
+   ```
+   - Enter your email address.
+   - Open the sign-in link sent to your email (you can do this on your mobile).
+   - Paste the link back into the script prompt.
+   - The script will save your token to `user_token.txt` in the format required for `.env`.
+
+   This makes it easy to get your token without using browser developer tools.
+
 ## Usage
 
 To launch the web application:
