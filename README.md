@@ -12,8 +12,8 @@ This project is a Streamlit web application for automatically creating a podcast
 
 1. Clone the repository:
     ```sh
-    git clone <repo-url>
-    cd <repo-folder>
+    git clone https://github.com/dauitsuragan002/CharacterPodcast
+    cd CharacterPodcast
     ```
 
 2. Install the required dependencies:
