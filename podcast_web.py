@@ -8,6 +8,7 @@ st.set_page_config(
 )
 
 import asyncio
+asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 import os
 import datetime
 import time
@@ -109,7 +110,6 @@ def run_podcast_thread(char1_name, char2_name, topic, exchanges):
     finally:
         try:
             loop.run_until_complete(loop.shutdown_asyncgens())
-            loop.close()
         except Exception:
             pass
 
@@ -188,7 +188,8 @@ def show_new_podcast_page():
 
     if st.session_state.show_chat_view or st.session_state.is_podcast_running:
         if st.session_state.is_podcast_running:
-            st.info(f"🎙️ {get_message('generation_completed', lang, '')} {st.session_state.current_chars['char1']} {get_message('and', lang) if 'and' in get_message.__globals__['MESSAGES'] else 'and'} {st.session_state.current_chars['char2']}")
+            and_text = get_message('and', lang) if 'and' in get_message.__globals__['MESSAGES'] and lang in get_message.__globals__['MESSAGES']['and'] else 'and'
+            st.info(f"🎙️ {get_message('generation_completed', lang, '')} {st.session_state.current_chars['char1']} {and_text} {st.session_state.current_chars['char2']}")
             time.sleep(2)
             st.rerun()
         if st.session_state.podcast_history:

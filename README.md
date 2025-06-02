@@ -12,13 +12,13 @@ This project is a Streamlit web application for automatically creating a podcast
 
 1. Clone the repository:
     ```sh
-    git clone <repo-url>
-    cd <repo-folder>
+    git clone https://github.com/dauitsuragan002/CharacterPodcast
+    cd CharacterPodcast
     ```
 
 2. Install the required dependencies:
     ```sh
-    pip install -r tulga-tts PyCharacterAI streamlit
+    pip install -r tulgatts PyCharacterAI streamlit
     ```
 
 3. Add your TulgaTTS API token to the `.env` file:
