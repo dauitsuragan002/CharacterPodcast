@@ -18,7 +18,7 @@ This project is a Streamlit web application for automatically creating a podcast
 
 2. Install the required dependencies:
     ```sh
-    pip install -r tulga-tts PyCharacterAI streamlit
+    pip install -r tulgatts PyCharacterAI streamlit
     ```
 
 3. Add your TulgaTTS API token to the `.env` file:
